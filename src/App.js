@@ -1,7 +1,6 @@
+import Input from "./Input.js"
 const App = () => {
-  return (
-    <div>Hello</div>
-  );
+  return;
 }
 
 export default App;

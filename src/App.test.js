@@ -1,10 +1,26 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Button from "./Button.js";
+import userEvent from '@testing-library/user-event';
+import Input from "./Input"
 
-//Button test
+describe("<Input />", () => {
 
-test('Renders with expected className', () => {
-  const {container} = render(<Button className="btn-okay">Click Me</Button>);
-  fireEvent.click(screen.getByText(/click me/i));
-  expect(container.firstChild).toHaveClass('btn btn-default btn-okay') 
+  test('render email input', () => {
+    render(<Input type="email" />);
+
+    const inputEl = screen.getByTestId("input");
+    expect(inputEl).toBeInTheDocument();
+    expect(inputEl).toHaveAttribute("type", "email");
+  });
+
+  test('render input and props', () => {
+    render(<Input required/>);
+
+    const inputEl = screen.getByTestId("input");
+    userEvent.type(inputEl, "Alex");
+
+    expect(inputEl).toHaveValue("Alex");
+    expect(inputEl).toBeInTheDocument();
+    expect(inputEl).toHaveAttribute("required");
+  });
+
 });
