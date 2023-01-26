@@ -1,8 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen, fireEvent } from '@testing-library/react';
+import Button from "./Button.js";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+//Button test
+
+test('Renders with expected className', () => {
+  const {container} = render(<Button className="btn-okay">Click Me</Button>);
+  fireEvent.click(screen.getByText(/click me/i));
+  expect(container.firstChild).toHaveClass('btn btn-default btn-okay') 
 });
