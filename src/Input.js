@@ -1,5 +1,3 @@
-import clsx from "clsx";
-
 const Input = (props) => {
     const {placeholder,type,required,...rest} = props;
 
