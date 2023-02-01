@@ -15,10 +15,8 @@ const ProductDetails = () =>{
       .catch(error=>console.log(error))
     },[])
 
-    const {name,image} = product
-
     const getClassName = (props) =>{
-      console.log(props.isActive)
+      
       if (props.isActive){
         return "tab-active"
       }
@@ -27,15 +25,15 @@ const ProductDetails = () =>{
     return (<>
       <div className="product-details-layout">
       <div>
-        <h2>{name}</h2>
-        <img width="300" className="product-details-image" alt={name} src={image}
+        <h2>{product.name}</h2>
+        <img width="300" className="product-details-image" alt={product.name} src={product.image}
         />
       </div>
       <div>
       <div className="tabs">
           <ul>
             <li>
-              <NavLink className={getClassName} to="info">Details</NavLink>
+              <NavLink className={getClassName} end to="" >Details</NavLink>
             </li>
             <li>
               <NavLink className={getClassName} to="prep">Preparation</NavLink>
@@ -45,7 +43,7 @@ const ProductDetails = () =>{
             </li>
           </ul>
         </div>
-        <Outlet />
+        <Outlet context={product}/>
       </div>
     </div>
     

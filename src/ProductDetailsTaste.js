@@ -1,6 +1,13 @@
+import {useOutletContext} from "react-router-dom";
+
 const ProductDetailsTaste= () =>{
+    const context = useOutletContext();
     return (
-        <h1>TBD</h1>
+        <>
+            <p>
+            <strong>Tasting notes:</strong> {context.tasting}
+            </p>
+        </>
     )
 }
 
