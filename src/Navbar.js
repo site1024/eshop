@@ -1,6 +1,6 @@
 import {NavLink} from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
     const getClassName = ({isActive}) =>{
         if (isActive){
             return "active";

@@ -1,6 +1,6 @@
 import {useOutletContext} from "react-router-dom";
 import Button from "./Button"
-const ProductDetailsInfo = () =>{
+const ProductDetailsInfo = (props) =>{
     const context = useOutletContext();
     
     return (
@@ -8,7 +8,7 @@ const ProductDetailsInfo = () =>{
             <p>
             {context.name} sold at <strong>${context.price}</strong> per box.
             </p>
-            <Button outline>${context.price}</Button>
+            <Button outline onClick={props.onProductAdd}>${context.price}</Button>
         </>
     )
 }

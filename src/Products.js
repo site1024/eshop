@@ -3,7 +3,7 @@ import useFetch from "./useFetch";
 import Loader from "./Loader";
 import { useState,useEffect } from "react";
 
-const Products = () => {
+const Products = (props) => {
 
     const [products,setProduct] = useState([]);
     const {get , loader} = useFetch("https://eshopdemo12-default-rtdb.firebaseio.com/")
@@ -21,7 +21,7 @@ const Products = () => {
             
             <div class="products-grid">
                 {loader && <Loader/>}
-                {products && products.map(product=> <Product key={product.id} details={product}/>)}
+                {products && products.map(product=> <Product key={product.id} details={product} onProductAdd={props.onProductAdd} onProductDelete={props.onProductDelete}/>)}
             </div>
         </div>
         
