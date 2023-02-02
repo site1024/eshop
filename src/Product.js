@@ -21,9 +21,9 @@ const Product = (props) => {
             </div>
             <div className="product-checkout">
                 <div>
-                    <Button outline className="product-delete" onClick={props.onProductDelete}>x</Button>
+                    <Button outline className="product-delete" onClick={()=>props.onProductDelete(id)}>x</Button>
                 </div>
-                <Button outline onClick={props.onProductAdd}>{`$${price}`}</Button>
+                <Button outline onClick={()=>props.onProductAdd(props.details)}>{`$${price}`}</Button>
             </div>
             
         </div>

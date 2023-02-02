@@ -8,9 +8,9 @@ const ProductDetailsInfo = (props) =>{
             <p>
             {context.name} sold at <strong>${context.price}</strong> per box.
             </p>
-            <Button outline onClick={props.onProductAdd}>${context.price}</Button>
+            <Button outline onClick={()=> props.onProductAdd(context)}>${context.price}</Button>
         </>
     )
 }
 
-export default ProductDetailsInfo;
+export default ProductDetailsInfo;  

@@ -21,7 +21,7 @@ const Products = (props) => {
             
             <div class="products-grid">
                 {loader && <Loader/>}
-                {products && products.map(product=> <Product key={product.id} details={product} onProductAdd={props.onProductAdd} onProductDelete={props.onProductDelete}/>)}
+                {products && products.map(product=> <Product key={product.id} details={product} cart={props.cart} onProductAdd={props.onProductAdd} onProductDelete={props.onProductDelete}/>)}
             </div>
         </div>
         

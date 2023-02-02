@@ -9,16 +9,36 @@ import ProductDetails from "./ProductDetails";
 import ProductDetailsInfo from "./ProductDetailsInfo";
 import ProductDetailsPrep from "./ProductDetailsPrep";
 import ProductDetailsTaste from "./ProductDetailsTaste";
+
 const App = () => {
 
   const [cart,setCart] = useState([]);
 
   const handleProductAdd = (newProduct) => {
-    console.log("Adding product " + newProduct.id);
+    const {id,price_id,name} = newProduct;
+    if(!(cart.find(element=>element.id===(newProduct.id))))
+      {
+        setCart([...cart,{
+          id: id,
+          price_id: price_id,
+          name: name,
+          quantity: 1
+        }])
+    } else{
+        const update = cart.map(element => {
+          if (element.id===(newProduct.id)){
+            return {...element,quantity:(element.quantity+=1)};
+          } else {
+            return element
+          }
+        })
+        return setCart(update)
+    }
   }
 
-  const handleProductDelete = (newProduct) => {
-    console.log("Deleting product " + newProduct.id);
+  const handleProductDelete = (id) => {
+    const update = cart.filter(element=>element.id!==(id))
+    return setCart(update)
   }
 
   return (<>
