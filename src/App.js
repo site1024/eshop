@@ -15,13 +15,10 @@ const App = () => {
   const [cart,setCart] = useState([]);
 
   const handleProductAdd = (newProduct) => {
-    const {id,price_id,name} = newProduct;
     if(!(cart.find(element=>element.id===(newProduct.id))))
       {
         setCart([...cart,{
-          id: id,
-          price_id: price_id,
-          name: name,
+          ...newProduct,
           quantity: 1
         }])
     } else{

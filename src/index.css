@@ -423,7 +423,7 @@ input:focus {
   background-color: var(--accent-1);
 }
 .table th {
-  padding: 15px;
+  padding: 18px;
   text-align: left;
 }
 .table td {
@@ -436,11 +436,11 @@ input:focus {
 }
 
 .table-cart {
-  text-align: center;
+  text-align: left;
 }
 .table-cart tbody td:first-child {
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 15px;
   padding-left: 20px;
 }
@@ -465,6 +465,7 @@ input:focus {
 .cart-highlight {
   background-color: var(--accent-1);
   color: white;
+  text-align: left;
 }
 
 .pay-form {
