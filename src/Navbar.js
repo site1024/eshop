@@ -6,6 +6,10 @@ const Navbar = (props) => {
             return "active";
         }
     }
+
+  
+  const sum = props.cart.reduce((total,current)=>total+current.quantity,0);
+
     return(
         <nav className="navbar">
             <NavLink to="/" className="nav-brand">
@@ -29,7 +33,7 @@ const Navbar = (props) => {
           </li>
           <li>
             <NavLink to="/cart" className="nav-item nav-cart btn btn-accent">
-              Cart (0)
+              Cart ({sum})
             </NavLink>
           </li>
         </ul>
