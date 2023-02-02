@@ -31,7 +31,7 @@ const Product = (props) => {
                 <div>
                     {sum>0 &&<Button outline className="product-delete" onClick={()=>props.onProductDelete(id)}>x</Button>}
                 </div>
-                <Button outline onClick={()=>props.onProductAdd(props.details)}>{`$${price}`}</Button>
+                <Button outline onClick={()=>props.onProductAdd(props.details)}>{`€${price}`}</Button>
             </div>
         </div>
         </>
