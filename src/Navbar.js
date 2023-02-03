@@ -13,7 +13,7 @@ const Navbar = (props) => {
     return(
         <nav className="navbar">
             <NavLink to="/" className="nav-brand">
-            Beter Dag
+            Windmill Brew
             </NavLink>
         <ul>
           <li className="nav-item">
