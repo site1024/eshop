@@ -64,7 +64,7 @@ const Cart = ({cart}) => {
                 </tbody>
                 <tfoot>
                     <tr>
-                    <th colSpan="2"></th>
+                    <th colSpan="2"> </th>
                     <th className="cart-highlight">Total</th>
                     <th className="cart-highlight">€{sum}</th>
                     </tr>

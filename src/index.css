@@ -114,7 +114,7 @@ article {
 .btn-default:active,
 .btn-outline:active {
   color: var(--primary-1);
-  background-color: var(--primary-4);
+  background-color: var(--primary-5);
 }
 
 .btn-default[disabled],
@@ -147,12 +147,14 @@ article {
 }
 
 .btn-outline {
-  color: var(--primary-1);
-  background-color: var(--primary-4);
+  color: var(--white);
+  background-color: var(--primary-1);
   border: var(--primary-1) 2px solid;
   box-shadow: 1px 1px 7px #c4c4c4;
   padding: 8px 25px;
   border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 /* FORMS */

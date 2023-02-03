@@ -18,7 +18,7 @@ const Product = (props) => {
         <> 
         <div className="product">
             <div className="product-image-container">
-                <Link to={`/products/${id}`}><img width="150"  className="product-image" alt={name} src={image}/></Link>
+                <Link to={`/products/${id}`} aria-label={`Link to product details of ${name}`}><img width="150"  className="product-image" alt="" src={image}/></Link>
                 <div className="product-quantity-container">
                 {sum>0 && <div className="product-quantity">{sum? sum:0}</div>}
                 </div>
@@ -29,7 +29,7 @@ const Product = (props) => {
             </div>
             <div className="product-checkout">
                 <div>
-                    {sum>0 &&<Button outline className="product-delete" onClick={()=>props.onProductDelete(id)}>x</Button>}
+                    {sum>0 &&<Button aria-label="Delete" outline className="product-delete" onClick={()=>props.onProductDelete(id)}>x</Button>}
                 </div>
                 <Button outline onClick={()=>props.onProductAdd(props.details)}>{`€${price}`}</Button>
             </div>
