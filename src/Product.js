@@ -24,7 +24,7 @@ const Product = (props) => {
                 </div>
             </div>
             <div className="product-info">
-                <article>{name}</article>
+                <h2>{name}</h2>
                 
             </div>
             <div className="product-checkout">
