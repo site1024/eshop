@@ -13,7 +13,7 @@ const ProductDetails = () =>{
       get(`productinfo/id${params.id}.json`)
       .then(data=>setProduct(data))
       .catch(error=>console.log(error))
-    },[])
+    },[params.id,get])
 
     const getClassName = (props) =>{
       

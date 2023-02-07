@@ -11,8 +11,7 @@ const Products = (props) => {
     useEffect (()=>{
         get("teaproduct.json")
         .then(data => setProduct(data))
-        .catch((error) => console.log("Could not load products", error))}
-        ,[])
+        .catch((error) => console.log("Could not load products", error))})
   
     return (
         <div className="products-layout">

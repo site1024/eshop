@@ -1,19 +1,14 @@
 import Button from "./Button";
 import {Link} from "react-router-dom"
-import Cart from "./Cart";
 
 const Product = (props) => {
 
     const {name,price,image,id} = props.details
 
-    let sum = 0;
-    props.cart.filter(element => { if (element.id===id)
-        {
-        return sum = (element.quantity)
-        } 
-    })
+    const productFromCart = props.cart.find(element => element.id===id);
 
-    
+    const sum = productFromCart? productFromCart.quantity:0;
+  
     return (
         <> 
         <div className="product">
